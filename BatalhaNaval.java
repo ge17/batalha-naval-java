@@ -12,7 +12,7 @@ public class BatalhaNaval {
 		// tabuleiro
 		String tabela[][] = new String[8][8];
 
-		// ¡rea do tabuleiro (para ser utilizado valores n˙mericos)
+		// √Årea do tabuleiro (para ser utilizado valores n√∫mericos)
 		int area[][] = new int[8][8];
 
 		// Array de navios, totalizando 5. Cada um com seu valor (ponto)
@@ -25,13 +25,13 @@ public class BatalhaNaval {
 		int cols = 0; // Colunas com random
 		int qtdTentativas = 5; // Quantidade de tentativas
 
-		// Abaixo est„o sendo inseridos os navios na ·rea do tabuleiro.
-		// O if(area[linhas][cols] == 0) compara se o valor atual n„o foi
+		// Abaixo est√£o sendo inseridos os navios na √°rea do tabuleiro.
+		// O if(area[linhas][cols] == 0) compara se o valor atual n√£o foi
 		// preenchido por algum navio anterior.
-		// Como as v·riaveis "linhas" e "colunas" est„o com um valor randÙmico,
-		// o valor da ·rea
-		// que vier aleatoriamente, ser· preenchido pelo navio.
-		// A variv·vel contNavios È o contador de navios.
+		// Como as v√°riaveis "linhas" e "colunas" est√£o com um valor rand√¥mico,
+		// o valor da √°rea
+		// que vier aleatoriamente, ser√° preenchido pelo navio.
+		// A variv√°vel contNavios √© o contador de navios.
 		int contNavios = 0;
 		do {
 			linhas = (int) (Math.random() * 8); // Linhas
@@ -54,14 +54,14 @@ public class BatalhaNaval {
 		} while (contNavios < 5);
 
 		System.out.println("*** Batalha Naval ***");
-		System.out.println("\nRegras do jogo: O jogo contÈm um tabuleiro 8x8 com 5 navios nele.");
-		System.out.println("H· 2 navios de 2 pontos, 2 navios de 3 pontos e 1 navio de 4 pontos.");
-		System.out.println("Caso acerte um navio ser· marcado X no tabuleiro, caso acerte a ·gua ser· marcado O.");
-		System.out.println("VocÍ tem " + qtdTentativas + " tiros disponÌveis.");
-		System.out.println("No final do jogo ser· exibido o local dos navios com seus respectivos pontos.");
+		System.out.println("\nRegras do jogo: O jogo cont√©m um tabuleiro 8x8 com 5 navios nele.");
+		System.out.println("H√° 2 navios de 2 pontos, 2 navios de 3 pontos e 1 navio de 4 pontos.");
+		System.out.println("Caso acerte um navio ser√° marcado X no tabuleiro, caso acerte a √°gua ser√° marcado O.");
+		System.out.println("Voc√™ tem " + qtdTentativas + " tiros dispon√≠veis.");
+		System.out.println("No final do jogo ser√° exibido o local dos navios com seus respectivos pontos.");
 		System.out.println("Acerte todos, se puder xD. Boa sorte!\n");
 
-		// No while abaixo, ser· a quantidade de tentativas de tiros que poder„o
+		// No while abaixo, ser√° a quantidade de tentativas de tiros que poder√£o
 		// ser realizados.
 		
 		while (qtdTentativas > 0) {
@@ -72,10 +72,10 @@ public class BatalhaNaval {
 
 			// For utilizado para comparar a letra digitada acima com o array de
 			// colunas
-			// a letra sendo igual, ir· passar o valor do i para o tiroCol
-			// Sendo que a posiÁ„o do A = 0
-			// Utilizado o equalsIgnoreCase, pois o == n„o funciona com
-			// comparaÁ„o de String
+			// a letra sendo igual, ir√° passar o valor do i para o tiroCol
+			// Sendo que a posi√ß√£o do A = 0
+			// Utilizado o equalsIgnoreCase, pois o == n√£o funciona com
+			// compara√ß√£o de String
 			for (int i = 0; i < 8; i++) {
 				if (coluna.equalsIgnoreCase(colunasArray[i])) {
 					tiroCol = i;
@@ -84,14 +84,14 @@ public class BatalhaNaval {
 			}
 
 			// Valor adquirido pelo Scanner -1, ou seja, se for digitado 1,
-			// ir· pegar a primeira linha que a primeira posiÁ„o do array (0)
+			// ir√° pegar a primeira linha que a primeira posi√ß√£o do array (0)
 			System.out.print("Escolha a linha: ");
 			tiroLin = tecladoLinha.nextInt() - 1;
 			System.out.println();
 
-			// Ifs utilizados para atribuiÁ„o de pontos, acertos e erros
-			// Caso ocorra algum acerto, ser· inserido X no tabuleiro, caso
-			// contr·rio insere O
+			// Ifs utilizados para atribui√ß√£o de pontos, acertos e erros
+			// Caso ocorra algum acerto, ser√° inserido X no tabuleiro, caso
+			// contr√°rio insere O
 			if (area[tiroLin][tiroCol] == navios[0] || area[tiroLin][tiroCol] == navios[1]) {
 				pontos += 2;
 				acertos++;
@@ -111,7 +111,7 @@ public class BatalhaNaval {
 
 			else {
 				erros++;
-				System.out.println("Acertou a ·gua... =/");
+				System.out.println("Acertou a √°gua... =/");
 				tabela[tiroLin][tiroCol] = "O";
 			}
 
@@ -139,7 +139,7 @@ public class BatalhaNaval {
 			// Exibir os pontos, acertos e erros
 			System.out.println("\nPontos: " + pontos);
 			System.out.println("Acertos no navio: " + acertos);
-			System.out.println("Acertos na ·gua: " + erros);
+			System.out.println("Acertos na √°gua: " + erros);
 			System.out.println();
 
 			// Contador de tentativas
